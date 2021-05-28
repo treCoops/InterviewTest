@@ -11,12 +11,13 @@ import FacebookLogin
 
 class HomeViewController: UIViewController {
   
-    
-
     @IBOutlet weak var txtUserName: UILabel!
+    @IBOutlet weak var tblViewHotels: UITableView!
     @IBOutlet weak var txtUserEmail: UILabel!
     
     var apiHelper = APIHelper()
+    
+    var hotelXIBArray : [XIBHotel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,8 @@ class HomeViewController: UIViewController {
             txtUserName.text = user?.displayName
             txtUserEmail.text = user?.email
         }
+        
+        tblViewHotels.register(UINib(nibName: XIBIdentifier.XIB_HOTEL, bundle: nil), forCellReuseIdentifier: XIBIdentifier.XIB_CELL_HOTEL)
         
         apiHelper.getHotelData();
         
@@ -60,7 +63,10 @@ extension HomeViewController : API{
     func response(hotels: [Hotel]){
         for data in hotels{
             print(data.address)
+            hotelXIBArray.append(XIBHotel(id: data.id, title: data.title, address: data.address, image: "a"))
         }
+        
+        tblViewHotels.reloadData()
     }
     
     func error(error: String){
@@ -68,3 +74,23 @@ extension HomeViewController : API{
         AlertBar.danger(title: error)
     }
 }
+
+extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return hotelXIBArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tblViewHotels.dequeueReusableCell(withIdentifier: XIBIdentifier.XIB_CELL_HOTEL, for: indexPath) as! HotelTableViewCell
+               cell.configXIB(data: hotelXIBArray[indexPath.row])
+               
+               cell.alpha = 0
+               UIView.animate(withDuration: 0.5, delay: 0.05 * Double(indexPath.row), animations: {
+                   cell.alpha = 1
+               })
+               
+               return cell
+    }
+}
+

@@ -9,6 +9,7 @@ import Foundation
 
 struct SegueIdentifier {
     static var SEGUE_HOME = "segueToHome"
+    static var SEGUE_DETAIL = "segueToDetails"
 }
 
 struct XIBIdentifier {

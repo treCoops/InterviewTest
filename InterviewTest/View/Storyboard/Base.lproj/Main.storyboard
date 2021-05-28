@@ -114,7 +114,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jMg-Lm-U3H">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jMg-Lm-U3H">
                                 <rect key="frame" x="0.0" y="181" width="414" height="681"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
@@ -140,17 +140,80 @@
                     </view>
                     <navigationItem key="navigationItem" id="bDI-Yq-Ntg"/>
                     <connections>
+                        <outlet property="tblViewHotels" destination="jMg-Lm-U3H" id="1jg-wl-JRj"/>
                         <outlet property="txtUserEmail" destination="zCN-mD-02D" id="4Uf-k8-s8v"/>
                         <outlet property="txtUserName" destination="vbl-Tc-tmk" id="ZrT-Sr-xQX"/>
+                        <segue destination="a2W-qN-xCt" kind="show" identifier="segueToDetails" id="7rS-0e-jTz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96T-ah-cJP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="984" y="138"/>
         </scene>
+        <!--Details-->
+        <scene sceneID="Q0x-PL-7Vo">
+            <objects>
+                <viewController id="a2W-qN-xCt" customClass="DetailViewController" customModule="InterviewTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T3A-ay-FLn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fW-DN-7dA">
+                                <rect key="frame" x="0.0" y="151" width="414" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeK-HA-OUO">
+                                        <rect key="frame" x="183" y="38" width="48.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77P-z8-l2c">
+                                        <rect key="frame" x="10" y="30" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="MKZ-tn-vMC"/>
+                                            <constraint firstAttribute="height" constant="30" id="beX-bD-TbW"/>
+                                        </constraints>
+                                        <state key="normal" image="previous"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zu-Ch-WYb">
+                                        <rect key="frame" x="374" y="30" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="WD2-GO-pez"/>
+                                            <constraint firstAttribute="height" constant="30" id="gud-2U-DhJ"/>
+                                        </constraints>
+                                        <state key="normal" image="marker"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.08235294118" green="0.58823529409999997" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="77P-z8-l2c" firstAttribute="top" secondItem="6fW-DN-7dA" secondAttribute="top" constant="30" id="1tA-hh-msA"/>
+                                    <constraint firstItem="GeK-HA-OUO" firstAttribute="top" secondItem="6fW-DN-7dA" secondAttribute="top" constant="38" id="Cy6-Sm-msf"/>
+                                    <constraint firstAttribute="height" constant="70" id="NON-Qj-SjG"/>
+                                    <constraint firstItem="GeK-HA-OUO" firstAttribute="centerX" secondItem="6fW-DN-7dA" secondAttribute="centerX" id="g8w-yW-AzX"/>
+                                    <constraint firstItem="5Zu-Ch-WYb" firstAttribute="top" secondItem="6fW-DN-7dA" secondAttribute="top" constant="30" id="gRi-mg-TB4"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Zu-Ch-WYb" secondAttribute="trailing" constant="10" id="m5w-BY-XqT"/>
+                                    <constraint firstItem="77P-z8-l2c" firstAttribute="leading" secondItem="6fW-DN-7dA" secondAttribute="leading" constant="10" id="pYO-Gy-Z1y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WMa-Wd-ciT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6fW-DN-7dA" firstAttribute="leading" secondItem="WMa-Wd-ciT" secondAttribute="leading" id="9tX-XC-wSO"/>
+                            <constraint firstItem="6fW-DN-7dA" firstAttribute="top" secondItem="WMa-Wd-ciT" secondAttribute="top" constant="63" id="IYX-o9-Q3H"/>
+                            <constraint firstItem="6fW-DN-7dA" firstAttribute="trailing" secondItem="WMa-Wd-ciT" secondAttribute="trailing" id="Ooh-QK-czw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="NlQ-tz-WCR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ex0-sb-lvq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="138"/>
+        </scene>
     </scenes>
     <resources>
         <image name="button_facebook" width="1002" height="156"/>
+        <image name="marker" width="42.5" height="42.5"/>
+        <image name="previous" width="42.5" height="42.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

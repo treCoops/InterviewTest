@@ -15,6 +15,7 @@ target 'InterviewTest' do
   pod 'NotificationBannerSwift', '~> 3.0.0'
   pod 'Alamofire', '~> 5.2'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'Kingfisher', '~> 6.1'
 
 	
 
