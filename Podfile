@@ -8,6 +8,10 @@ target 'InterviewTest' do
   # Pods for InterviewTest
   
   pod 'Firebase/Auth'
+  pod ‘FacebookCore’
+  pod ‘FacebookLogin’
+  pod ‘FBSDKCoreKit’
+  pod ‘FBSDKLoginKit’
 	
 
 
