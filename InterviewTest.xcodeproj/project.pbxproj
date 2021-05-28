@@ -30,6 +30,8 @@
 		8F8205E12660BF9800C64B93 /* XIBHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205E02660BF9800C64B93 /* XIBHotel.swift */; };
 		8F8205E52660C6BB00C64B93 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205E42660C6BB00C64B93 /* DetailViewController.swift */; };
 		8F8205E72660D2F300C64B93 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205E62660D2F300C64B93 /* MapViewController.swift */; };
+		8F8205E92660DC5600C64B93 /* NetworkChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205E82660DC5600C64B93 /* NetworkChecker.swift */; };
+		8F8205EB2660DD6200C64B93 /* IndicatorHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205EA2660DD6200C64B93 /* IndicatorHUD.swift */; };
 		B2025F5EC8BBE2FE5C0EE9F7 /* Pods_InterviewTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C404FB07A62F7E2B2D34C28 /* Pods_InterviewTestTests.framework */; };
 		F719071D836A6CD72288BB93 /* Pods_InterviewTest_InterviewTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04378EA1EC921E919DA5216 /* Pods_InterviewTest_InterviewTestUITests.framework */; };
 /* End PBXBuildFile section */
@@ -95,6 +97,8 @@
 		8F8205E02660BF9800C64B93 /* XIBHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XIBHotel.swift; sourceTree = "<group>"; };
 		8F8205E42660C6BB00C64B93 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8F8205E62660D2F300C64B93 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8F8205E82660DC5600C64B93 /* NetworkChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkChecker.swift; sourceTree = "<group>"; };
+		8F8205EA2660DD6200C64B93 /* IndicatorHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorHUD.swift; sourceTree = "<group>"; };
 		CCAD19BDD70CC9DDED41E443 /* Pods-InterviewTest-InterviewTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewTest-InterviewTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-InterviewTest-InterviewTestUITests/Pods-InterviewTest-InterviewTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D38BF1BA4FAE5301822AEB05 /* Pods-InterviewTest-InterviewTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewTest-InterviewTestUITests.release.xcconfig"; path = "Target Support Files/Pods-InterviewTest-InterviewTestUITests/Pods-InterviewTest-InterviewTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD1AF9900DD382D51016DDED /* Pods_InterviewTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterviewTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +264,7 @@
 			children = (
 				8F8205C62660A3A000C64B93 /* Constrains.swift */,
 				8F8205CF2660AFE900C64B93 /* APIHelper.swift */,
+				8F8205E82660DC5600C64B93 /* NetworkChecker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				8F8205C92660A80700C64B93 /* RoundedUIButton.swift */,
 				8F8205CD2660AC5C00C64B93 /* AlertBar.swift */,
 				8F8205DD2660BD3B00C64B93 /* RoundedImageView.swift */,
+				8F8205EA2660DD6200C64B93 /* IndicatorHUD.swift */,
 			);
 			path = UIClass;
 			sourceTree = "<group>";
@@ -569,9 +575,11 @@
 				8F8205E12660BF9800C64B93 /* XIBHotel.swift in Sources */,
 				8F8205DE2660BD3B00C64B93 /* RoundedImageView.swift in Sources */,
 				8F8205722660942D00C64B93 /* SceneDelegate.swift in Sources */,
+				8F8205EB2660DD6200C64B93 /* IndicatorHUD.swift in Sources */,
 				8F8205C72660A3A000C64B93 /* Constrains.swift in Sources */,
 				8F8205CC2660A9BA00C64B93 /* HomeViewController.swift in Sources */,
 				8F8205E72660D2F300C64B93 /* MapViewController.swift in Sources */,
+				8F8205E92660DC5600C64B93 /* NetworkChecker.swift in Sources */,
 				8F8205E52660C6BB00C64B93 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,11 +19,18 @@ class HomeViewController: UIViewController {
     
     var hotelXIBArray : [XIBHotel] = []
     
+    var indicatorHUD : IndicatorHUD!
+    
+    var alert : UIAlertController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicatorHUD = IndicatorHUD(view: view)
         
         apiHelper.delagate = self
-
+        
+        createAlertDialog()
+        
         let user = Auth.auth().currentUser
         
         if user != nil{
@@ -33,13 +40,17 @@ class HomeViewController: UIViewController {
         
         tblViewHotels.register(UINib(nibName: XIBIdentifier.XIB_HOTEL, bundle: nil), forCellReuseIdentifier: XIBIdentifier.XIB_CELL_HOTEL)
         
-        apiHelper.getHotelData();
-        
+        if(NetworkChecker.isConnectedToNetwork()){
+            indicatorHUD.show()
+            apiHelper.getHotelData();
+        }else{
+            AlertBar.warning(title: "No network available, Please connect to the internet.")
+        }
     }
     
 
     @IBAction func btnLogoutPressed(_ sender: UIButton) {
-        logOut()
+        self.present(alert, animated: true, completion: nil)
     }
     
     func logOut(){
@@ -53,10 +64,23 @@ class HomeViewController: UIViewController {
         }
     }
     
+    func createAlertDialog() {
+        alert = UIAlertController(title: "Interview Test", message: "Do you want to logout?", preferredStyle: .actionSheet)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {_ in
+            self.logOut()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {_ in
+           
+        }))
+    
+    }
+    
 }
 
 extension HomeViewController : API{
     func error(error: Error) {
+        self.indicatorHUD.hide()
         print(error.localizedDescription)
         AlertBar.danger(title: error.localizedDescription)
     }
@@ -65,11 +89,12 @@ extension HomeViewController : API{
             print(data.image.small)
             hotelXIBArray.append(XIBHotel(id: data.id, title: data.title, address: data.address, imageSmall: data.image.small, imageLarge: data.image.large, description: data.description, latitude: data.latitude, longitude: data.longitude))
         }
-        
+        self.indicatorHUD.hide()
         tblViewHotels.reloadData()
     }
     
     func error(error: String){
+        self.indicatorHUD.hide()
         print(error)
         AlertBar.danger(title: error)
     }

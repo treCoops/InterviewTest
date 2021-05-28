@@ -32,7 +32,12 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func btnFacebookLoginPressed(_ sender: UIButton) {
-        loginButton.sendActions(for: .touchUpInside)
+        
+        if(NetworkChecker.isConnectedToNetwork()){
+            loginButton.sendActions(for: .touchUpInside)
+        }else{
+            AlertBar.warning(title: "No network available, Please connect to the internet.")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +54,7 @@ extension SignInViewController: LoginButtonDelegate{
             
         }
         
-        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current?.tokenString ?? "")
 
         Auth.auth().signIn(with: credential) { (authResult, error) in
           if let error = error {
