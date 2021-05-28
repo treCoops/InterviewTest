@@ -12,6 +12,9 @@ target 'InterviewTest' do
   pod ‘FacebookLogin’
   pod ‘FBSDKCoreKit’
   pod ‘FBSDKLoginKit’
+  pod 'NotificationBannerSwift', '~> 3.0.0'
+  pod 'Alamofire', '~> 5.2'
+
 	
 
 

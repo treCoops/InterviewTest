@@ -18,6 +18,9 @@
 		8F8205922660942E00C64B93 /* InterviewTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205912660942E00C64B93 /* InterviewTestUITests.swift */; };
 		8F8205C42660997400C64B93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F8205C32660997400C64B93 /* GoogleService-Info.plist */; };
 		8F8205C72660A3A000C64B93 /* Constrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205C62660A3A000C64B93 /* Constrains.swift */; };
+		8F8205CA2660A80700C64B93 /* RoundedUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205C92660A80700C64B93 /* RoundedUIButton.swift */; };
+		8F8205CC2660A9BA00C64B93 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205CB2660A9BA00C64B93 /* HomeViewController.swift */; };
+		8F8205CE2660AC5C00C64B93 /* AlertBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205CD2660AC5C00C64B93 /* AlertBar.swift */; };
 		B2025F5EC8BBE2FE5C0EE9F7 /* Pods_InterviewTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C404FB07A62F7E2B2D34C28 /* Pods_InterviewTestTests.framework */; };
 		F719071D836A6CD72288BB93 /* Pods_InterviewTest_InterviewTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04378EA1EC921E919DA5216 /* Pods_InterviewTest_InterviewTestUITests.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +74,9 @@
 		8F8205BF266095FE00C64B93 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
 		8F8205C32660997400C64B93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8F8205C62660A3A000C64B93 /* Constrains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrains.swift; sourceTree = "<group>"; };
+		8F8205C92660A80700C64B93 /* RoundedUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIButton.swift; sourceTree = "<group>"; };
+		8F8205CB2660A9BA00C64B93 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8F8205CD2660AC5C00C64B93 /* AlertBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBar.swift; sourceTree = "<group>"; };
 		CCAD19BDD70CC9DDED41E443 /* Pods-InterviewTest-InterviewTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewTest-InterviewTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-InterviewTest-InterviewTestUITests/Pods-InterviewTest-InterviewTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D38BF1BA4FAE5301822AEB05 /* Pods-InterviewTest-InterviewTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewTest-InterviewTestUITests.release.xcconfig"; path = "Target Support Files/Pods-InterviewTest-InterviewTestUITests/Pods-InterviewTest-InterviewTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD1AF9900DD382D51016DDED /* Pods_InterviewTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterviewTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +159,7 @@
 		8F82056E2660942D00C64B93 /* InterviewTest */ = {
 			isa = PBXGroup;
 			children = (
+				8F8205C82660A7ED00C64B93 /* UIClass */,
 				8F8205C52660A39000C64B93 /* Helpers */,
 				8F8205C32660997400C64B93 /* GoogleService-Info.plist */,
 				8F8205C22660965B00C64B93 /* Model */,
@@ -206,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				8F8205732660942D00C64B93 /* SignInViewController.swift */,
+				8F8205CB2660A9BA00C64B93 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -232,6 +240,15 @@
 				8F8205C62660A3A000C64B93 /* Constrains.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8F8205C82660A7ED00C64B93 /* UIClass */ = {
+			isa = PBXGroup;
+			children = (
+				8F8205C92660A80700C64B93 /* RoundedUIButton.swift */,
+				8F8205CD2660AC5C00C64B93 /* AlertBar.swift */,
+			);
+			path = UIClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,10 +490,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F8205CE2660AC5C00C64B93 /* AlertBar.swift in Sources */,
 				8F8205742660942D00C64B93 /* SignInViewController.swift in Sources */,
 				8F8205702660942D00C64B93 /* AppDelegate.swift in Sources */,
+				8F8205CA2660A80700C64B93 /* RoundedUIButton.swift in Sources */,
 				8F8205722660942D00C64B93 /* SceneDelegate.swift in Sources */,
 				8F8205C72660A3A000C64B93 /* Constrains.swift in Sources */,
+				8F8205CC2660A9BA00C64B93 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
