@@ -11,5 +11,9 @@ struct XIBHotel {
     var id: Int
     var title: String
     var address: String
-    var image: String
+    var imageSmall: String
+    var imageLarge: String
+    var description: String
+    var latitude: String
+    var longitude: String
 }

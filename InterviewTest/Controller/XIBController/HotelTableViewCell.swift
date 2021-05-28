@@ -27,7 +27,7 @@ class HotelTableViewCell: UITableViewCell {
         txtTitle.text = data.title
         txtAddress.text = data.address
         imgView.kf.setImage(
-            with: URL(string: data.image),
+            with: URL(string: data.imageSmall),
             completionHandler: { result in
                 switch result {
                     case .success(let value):

@@ -62,8 +62,8 @@ extension HomeViewController : API{
     }
     func response(hotels: [Hotel]){
         for data in hotels{
-            print(data.address)
-            hotelXIBArray.append(XIBHotel(id: data.id, title: data.title, address: data.address, image: "a"))
+            print(data.image.small)
+            hotelXIBArray.append(XIBHotel(id: data.id, title: data.title, address: data.address, imageSmall: data.image.small, imageLarge: data.image.large, description: data.description, latitude: data.latitude, longitude: data.longitude))
         }
         
         tblViewHotels.reloadData()
@@ -91,6 +91,35 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
                })
                
                return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: SegueIdentifier.SEGUE_DETAIL, sender: self)
+    }
+    
+}
+
+
+extension HomeViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == SegueIdentifier.SEGUE_DETAIL {
+
+            if let indexPath = self.tblViewHotels.indexPathForSelectedRow {
+                
+                let hotel : XIBHotel = hotelXIBArray[indexPath.row]
+                
+                (segue.destination as! DetailViewController).hotel = [
+                    "id" : hotel.id,
+                    "title" : hotel.title,
+                    "address" : hotel.address,
+                    "imageLarge" : hotel.imageLarge,
+                    "description" : hotel.description,
+                    "latitude" : hotel.latitude,
+                    "longitude" : hotel.longitude,
+                ]
+            }
+        }
     }
 }
 
