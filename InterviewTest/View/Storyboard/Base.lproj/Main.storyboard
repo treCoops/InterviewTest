@@ -286,20 +286,30 @@
                                     <constraint firstItem="Wet-xb-kTq" firstAttribute="leading" secondItem="Ued-S9-HpW" secondAttribute="leading" constant="10" id="mHM-Dc-kdG"/>
                                 </constraints>
                             </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Ra-Md-zXo">
+                                <rect key="frame" x="0.0" y="70" width="414" height="792"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sxM-DO-AEQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ued-S9-HpW" firstAttribute="leading" secondItem="sxM-DO-AEQ" secondAttribute="leading" id="4Vk-fe-APl"/>
                             <constraint firstItem="Ued-S9-HpW" firstAttribute="trailing" secondItem="sxM-DO-AEQ" secondAttribute="trailing" id="8MK-MS-uIP"/>
+                            <constraint firstItem="sxM-DO-AEQ" firstAttribute="trailing" secondItem="6Ra-Md-zXo" secondAttribute="trailing" id="8Yy-EI-0uI"/>
+                            <constraint firstItem="6Ra-Md-zXo" firstAttribute="leading" secondItem="sxM-DO-AEQ" secondAttribute="leading" id="Bru-Dv-XvX"/>
+                            <constraint firstItem="sxM-DO-AEQ" firstAttribute="bottom" secondItem="6Ra-Md-zXo" secondAttribute="bottom" id="pbP-j3-r5g"/>
+                            <constraint firstItem="6Ra-Md-zXo" firstAttribute="top" secondItem="Ued-S9-HpW" secondAttribute="bottom" id="sVx-ck-r25"/>
                             <constraint firstItem="Ued-S9-HpW" firstAttribute="top" secondItem="GTg-lQ-XmT" secondAttribute="top" id="vhb-aN-waQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z2O-PM-Rdt"/>
+                    <connections>
+                        <outlet property="mapView" destination="6Ra-Md-zXo" id="Kq6-u2-Z5r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXb-6K-0M1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2846" y="138"/>
+            <point key="canvasLocation" x="2844.9275362318845" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>

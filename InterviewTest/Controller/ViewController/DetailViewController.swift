@@ -42,3 +42,20 @@ class DetailViewController: UIViewController {
     }
     
 }
+
+extension DetailViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == SegueIdentifier.SEGUE_MAP {
+
+            (segue.destination as! MapViewController).mapData = [
+                "id" : self.hotel["id"]!,
+                "title" : self.hotel["title"]!,
+                "address" : self.hotel["address"]!,
+                "latitude" : self.hotel["latitude"]!,
+                "longitude" : self.hotel["longitude"]!,
+            ]
+       
+        }
+    }
+}
