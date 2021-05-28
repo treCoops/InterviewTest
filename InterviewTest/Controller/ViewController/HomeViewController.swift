@@ -10,12 +10,18 @@ import Firebase
 import FacebookLogin
 
 class HomeViewController: UIViewController {
+  
+    
 
     @IBOutlet weak var txtUserName: UILabel!
     @IBOutlet weak var txtUserEmail: UILabel!
     
+    var apiHelper = APIHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        apiHelper.delagate = self
 
         let user = Auth.auth().currentUser
         
@@ -24,6 +30,7 @@ class HomeViewController: UIViewController {
             txtUserEmail.text = user?.email
         }
         
+        apiHelper.getHotelData();
         
     }
     
@@ -43,4 +50,21 @@ class HomeViewController: UIViewController {
         }
     }
     
+}
+
+extension HomeViewController : API{
+    func error(error: Error) {
+        print(error.localizedDescription)
+        AlertBar.danger(title: error.localizedDescription)
+    }
+    func response(hotels: [Hotel]){
+        for data in hotels{
+            print(data.address)
+        }
+    }
+    
+    func error(error: String){
+        print(error)
+        AlertBar.danger(title: error)
+    }
 }

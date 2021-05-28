@@ -21,6 +21,12 @@
 		8F8205CA2660A80700C64B93 /* RoundedUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205C92660A80700C64B93 /* RoundedUIButton.swift */; };
 		8F8205CC2660A9BA00C64B93 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205CB2660A9BA00C64B93 /* HomeViewController.swift */; };
 		8F8205CE2660AC5C00C64B93 /* AlertBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205CD2660AC5C00C64B93 /* AlertBar.swift */; };
+		8F8205D02660AFE900C64B93 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205CF2660AFE900C64B93 /* APIHelper.swift */; };
+		8F8205D22660B21500C64B93 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205D12660B21500C64B93 /* HotelModel.swift */; };
+		8F8205D42660B27F00C64B93 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205D32660B27F00C64B93 /* ImageModel.swift */; };
+		8F8205D92660BCCD00C64B93 /* HotelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205D72660BCCD00C64B93 /* HotelTableViewCell.swift */; };
+		8F8205DA2660BCCD00C64B93 /* HotelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8205D82660BCCD00C64B93 /* HotelTableViewCell.xib */; };
+		8F8205DE2660BD3B00C64B93 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8205DD2660BD3B00C64B93 /* RoundedImageView.swift */; };
 		B2025F5EC8BBE2FE5C0EE9F7 /* Pods_InterviewTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C404FB07A62F7E2B2D34C28 /* Pods_InterviewTestTests.framework */; };
 		F719071D836A6CD72288BB93 /* Pods_InterviewTest_InterviewTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04378EA1EC921E919DA5216 /* Pods_InterviewTest_InterviewTestUITests.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +83,12 @@
 		8F8205C92660A80700C64B93 /* RoundedUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIButton.swift; sourceTree = "<group>"; };
 		8F8205CB2660A9BA00C64B93 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8F8205CD2660AC5C00C64B93 /* AlertBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBar.swift; sourceTree = "<group>"; };
+		8F8205CF2660AFE900C64B93 /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		8F8205D12660B21500C64B93 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
+		8F8205D32660B27F00C64B93 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		8F8205D72660BCCD00C64B93 /* HotelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelTableViewCell.swift; sourceTree = "<group>"; };
+		8F8205D82660BCCD00C64B93 /* HotelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotelTableViewCell.xib; sourceTree = "<group>"; };
+		8F8205DD2660BD3B00C64B93 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		CCAD19BDD70CC9DDED41E443 /* Pods-InterviewTest-InterviewTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewTest-InterviewTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-InterviewTest-InterviewTestUITests/Pods-InterviewTest-InterviewTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D38BF1BA4FAE5301822AEB05 /* Pods-InterviewTest-InterviewTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterviewTest-InterviewTestUITests.release.xcconfig"; path = "Target Support Files/Pods-InterviewTest-InterviewTestUITests/Pods-InterviewTest-InterviewTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD1AF9900DD382D51016DDED /* Pods_InterviewTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InterviewTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,8 +224,8 @@
 		8F8205C02660960800C64B93 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8F8205732660942D00C64B93 /* SignInViewController.swift */,
-				8F8205CB2660A9BA00C64B93 /* HomeViewController.swift */,
+				8F8205DC2660BCE200C64B93 /* ViewController */,
+				8F8205DB2660BCD800C64B93 /* XIBController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,8 +233,8 @@
 		8F8205C12660964700C64B93 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8F8205752660942D00C64B93 /* Main.storyboard */,
-				8F82057A2660942D00C64B93 /* LaunchScreen.storyboard */,
+				8F8205D62660BCA700C64B93 /* Storyboard */,
+				8F8205D52660BC9B00C64B93 /* XIB */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,6 +242,8 @@
 		8F8205C22660965B00C64B93 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8F8205D12660B21500C64B93 /* HotelModel.swift */,
+				8F8205D32660B27F00C64B93 /* ImageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				8F8205C62660A3A000C64B93 /* Constrains.swift */,
+				8F8205CF2660AFE900C64B93 /* APIHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -247,8 +262,43 @@
 			children = (
 				8F8205C92660A80700C64B93 /* RoundedUIButton.swift */,
 				8F8205CD2660AC5C00C64B93 /* AlertBar.swift */,
+				8F8205DD2660BD3B00C64B93 /* RoundedImageView.swift */,
 			);
 			path = UIClass;
+			sourceTree = "<group>";
+		};
+		8F8205D52660BC9B00C64B93 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				8F8205D82660BCCD00C64B93 /* HotelTableViewCell.xib */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
+		8F8205D62660BCA700C64B93 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				8F8205752660942D00C64B93 /* Main.storyboard */,
+				8F82057A2660942D00C64B93 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		8F8205DB2660BCD800C64B93 /* XIBController */ = {
+			isa = PBXGroup;
+			children = (
+				8F8205D72660BCCD00C64B93 /* HotelTableViewCell.swift */,
+			);
+			path = XIBController;
+			sourceTree = "<group>";
+		};
+		8F8205DC2660BCE200C64B93 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8F8205732660942D00C64B93 /* SignInViewController.swift */,
+				8F8205CB2660A9BA00C64B93 /* HomeViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F82057C2660942D00C64B93 /* LaunchScreen.storyboard in Resources */,
+				8F8205DA2660BCCD00C64B93 /* HotelTableViewCell.xib in Resources */,
 				8F8205C42660997400C64B93 /* GoogleService-Info.plist in Resources */,
 				8F8205792660942D00C64B93 /* Assets.xcassets in Resources */,
 				8F8205772660942D00C64B93 /* Main.storyboard in Resources */,
@@ -491,9 +542,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F8205CE2660AC5C00C64B93 /* AlertBar.swift in Sources */,
+				8F8205D42660B27F00C64B93 /* ImageModel.swift in Sources */,
+				8F8205D22660B21500C64B93 /* HotelModel.swift in Sources */,
 				8F8205742660942D00C64B93 /* SignInViewController.swift in Sources */,
 				8F8205702660942D00C64B93 /* AppDelegate.swift in Sources */,
 				8F8205CA2660A80700C64B93 /* RoundedUIButton.swift in Sources */,
+				8F8205D92660BCCD00C64B93 /* HotelTableViewCell.swift in Sources */,
+				8F8205D02660AFE900C64B93 /* APIHelper.swift in Sources */,
+				8F8205DE2660BD3B00C64B93 /* RoundedImageView.swift in Sources */,
 				8F8205722660942D00C64B93 /* SceneDelegate.swift in Sources */,
 				8F8205C72660A3A000C64B93 /* Constrains.swift in Sources */,
 				8F8205CC2660A9BA00C64B93 /* HomeViewController.swift in Sources */,

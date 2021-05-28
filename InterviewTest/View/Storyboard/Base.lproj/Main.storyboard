@@ -114,6 +114,14 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jMg-Lm-U3H">
+                                <rect key="frame" x="0.0" y="181" width="414" height="681"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="XYW-Fe-Fe5" id="npZ-WA-6Lg"/>
+                                    <outlet property="delegate" destination="XYW-Fe-Fe5" id="bfJ-Zq-8kg"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UVu-hp-1U5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -122,8 +130,12 @@
                             <constraint firstItem="HLS-in-TZa" firstAttribute="top" secondItem="606-eY-LuF" secondAttribute="top" constant="80" id="OQS-Hq-RnR"/>
                             <constraint firstItem="606-eY-LuF" firstAttribute="leading" secondItem="UVu-hp-1U5" secondAttribute="leading" id="QxM-Oy-CPr"/>
                             <constraint firstItem="UVu-hp-1U5" firstAttribute="trailing" secondItem="606-eY-LuF" secondAttribute="trailing" id="T4v-Vy-1bb"/>
+                            <constraint firstItem="jMg-Lm-U3H" firstAttribute="leading" secondItem="UVu-hp-1U5" secondAttribute="leading" id="e0Z-xz-Dkc"/>
                             <constraint firstItem="HLS-in-TZa" firstAttribute="leading" secondItem="UVu-hp-1U5" secondAttribute="leading" constant="50" id="er0-LU-yhx"/>
+                            <constraint firstItem="UVu-hp-1U5" firstAttribute="bottom" secondItem="jMg-Lm-U3H" secondAttribute="bottom" id="gyJ-7q-eLh"/>
                             <constraint firstItem="606-eY-LuF" firstAttribute="top" secondItem="Jnf-7Q-ZTP" secondAttribute="top" id="lV6-MC-ZGz"/>
+                            <constraint firstItem="jMg-Lm-U3H" firstAttribute="top" secondItem="HLS-in-TZa" secondAttribute="bottom" constant="10" id="vxa-lT-eDL"/>
+                            <constraint firstItem="UVu-hp-1U5" firstAttribute="trailing" secondItem="jMg-Lm-U3H" secondAttribute="trailing" id="zfd-HS-KyD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bDI-Yq-Ntg"/>

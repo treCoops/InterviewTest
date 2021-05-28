@@ -14,6 +14,7 @@ target 'InterviewTest' do
   pod ‘FBSDKLoginKit’
   pod 'NotificationBannerSwift', '~> 3.0.0'
   pod 'Alamofire', '~> 5.2'
+  pod 'SwiftyJSON', '~> 4.0'
 
 	
 
